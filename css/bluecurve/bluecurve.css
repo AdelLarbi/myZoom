@@ -1,0 +1,89 @@
+/*
+	back:	rgb(230,230,230)
+	dark:	rgb(90,97,90)
+	medium	rgb(189,190,189)
+	*/
+
+.dynamic-slider-control {
+	position:			relative;
+	-moz-user-focus:	normal;
+	-moz-user-select:	none;
+	cursor:				default;
+}
+
+.horizontal 
+{
+    width:				200px;
+	height:				27px;
+    margin: auto;
+}
+
+.vertical {
+	width:				29px;
+	height:				200px;
+}
+
+.dynamic-slider-control input {
+	display:	none;
+}
+
+.dynamic-slider-control .handle {
+	position:			absolute;	
+	font-size:			1px;
+	overflow:			hidden;
+	-moz-user-select:	none;
+	cursor:				pointer;
+}
+
+.dynamic-slider-control.horizontal .handle {
+	width:				31px;
+	height: 4px;
+	background: #898A8C;
+}
+
+.slider-pane-hoz .dynamic-slider-control.horizontal .handle {
+	width:				17px;
+	height:				23px;
+	background-image:	url(thumb_hoz.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+}
+
+.dynamic-slider-control.horizontal .handle div {}
+.dynamic-slider-control.horizontal .handle.hover {}
+
+.slider-pane-vrt .dynamic-slider-control.vertical .handle {
+	width:				23px;
+	height:				17px;
+	background-image:	url(thumb_vrt.gif);
+	background-repeat: no-repeat;
+	background-position: 1px 0px;
+}
+
+.dynamic-slider-control.vertical .handle.hover {}
+
+.dynamic-slider-control .line {
+	position:			absolute;
+	font-size:			0.01mm;
+	overflow:			hidden;
+	behavior:			url(../boxsizing.htc); /* ie path bug */
+	box-sizing:			content-box;
+	background: #A6A7A9;
+	-moz-box-sizing:	content-box;
+}
+.dynamic-slider-control.vertical .line {
+	width:				1px;
+}
+
+.dynamic-slider-control.horizontal .line {
+	height: 4px;
+}
+
+.dynamic-slider-control .line div {
+	width:		1px;
+	height:		1px;
+	
+	border: 4px solid;
+	margin: auto;
+	border-color: #A7A8AA;
+}

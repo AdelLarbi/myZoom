@@ -1,0 +1,396 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from dashboard.constructionview.com.au/ by HTTrack Website Copier/3.x [XR&CO'2013], Sun, 27 Jul 2014 12:10:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>
+	Construction View&trade;
+</title>
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.dropdown.js"></script>
+    <script type="text/javascript" src="scripts/drag.js"></script>
+    <script type="text/javascript" src="scripts/scripts.js"></script>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" /><link href="css/print.css" rel="stylesheet" type="text/css" media="print" /><link type="text/css" rel="StyleSheet" href="css/bluecurve/bluecurve.css" />
+    <script type="text/javascript" src="scripts/range.js"></script>
+    <script type="text/javascript" src="scripts/timer.js"></script>
+    <script type="text/javascript" src="scripts/slider.js"></script>
+    <script type="text/javascript" src="scripts/slideshow.ashx"></script>
+    <script type="text/javascript" src="scripts/slideshow.js"></script>
+    <link href="css/jquery.dropdown.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="Initialize()" onresize="Resize()" style="background-image: none">
+    <div class="sep-line" id="separator" style="display: none"></div>
+    <div id="_debug" style="overflow: scroll; height: 500px; position: absolute; z-index: 10; width: 200px; background-color: #fff; right: 0px; top: 0px; display: none"></div>
+    <div class="slider-pane-hoz" id="slider_pane_hoz" style="display:none;" >
+	    <div id="hoz_slider">
+            <input id="hoz_slider_input" />
+	    </div>
+	    <input id="SliderHoz" value="100" type="hidden" />
+    </div>
+    
+    <div class="slider-pane-vrt" id="slider_pane_vrt" style="display:none;" >
+	    <div id="vrt_slider">
+            <input id="vrt_slider_input" />
+	    </div>
+	    <input id="SliderVrt" value="100" type="hidden" />
+    </div>
+    
+    <div id="sliderBox" style="display:none;" class="slider-box"></div>
+    <div class="slider-pane-loading" id="slider_loading"></div>
+    <div class="slider-pane" id="slider">
+	    <div id="red_slider">
+            <input id="red_slider_input" />
+	    </div>
+	    <input id="Slider1" value="100" type="hidden" />
+    </div> 
+    <script src="scripts/sliderControls.js" type="text/javascript"></script>
+    <div id="overlay_bg_left" class="overlay-bg-left" style="display: none; left: 232px; top: 110px;height: 19px"></div>
+    <div id="overlay_bg_right" class="overlay-bg-right" style="display: none; top: 110px;height: 19px"></div>
+    <div id="overlay_bg_top" class="overlay-bg-left" style="display: none; top: 110px; left: 232px;width: 18px"></div>
+    <div id="overlay_bg_bottom" class="overlay-bg-right" style="display: none; left: 232px;width: 18px"></div>
+    <div class="split-bg" id="splitBg" style="display: none"></div>
+    <div id="loading_pane" class="loading-pane"></div>
+    <div id="overlay" style="display: none" class="overlay" onclick="CloseOverlay()"></div>
+    <a href="http://www.constructionview.com.au/" target="_blank" id="cv_logo" class="cv-logo" style="display: none"><img src="images/cv_logo.png" alt="CV" /></a>
+
+    <form name="frm" method="post" action="http://dashboard.constructionview.com.au/default.aspx" id="frm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEyNDQ1MjYwOTFkZAbzaZup3aJ46uhLhlhtdAgPk4WH" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWDALC3ZT3DgLcyOJwAoTz/boMAvjNlPoCAr/Wzv8PArbnhJkCAuiG+ZgGAreqmIIKAq3s5KgEAs3B7q4JAs3Btq0JAt2vzJkImBiXprgoF3JjmDR3UcKzW5fde74=" />
+</div>
+    <input type="hidden" name="hidDebug" id="hidDebug" value="0" />
+    <div id="layout" class="layout" style="display: none">
+    <div id="label1_bg" class="img-label-bg" style="display: none"></div>
+    <div id="label2_bg" class="img-label-bg" style="display: none"></div>
+    <div id="label3_bg" class="img-label-bg" style="display: none"></div>
+    <div id="label4_bg" class="img-label-bg" style="display: none"></div>
+    <span id="label1" class="img-label" style="display: none"></span>
+    <span id="label2" class="img-label" style="display: none"></span>
+    <span id="label3" class="img-label" style="display: none"></span>
+    <span id="label4" class="img-label" style="display: none"></span>
+    <div class="main-image" id="main_panel">
+        <img id="imgLoading" style="margin-left: auto; margin-right: auto" src="images/loading.gif" />
+        <img id="image" style="display: none" />
+    </div>
+    <div class="main-image" id="right_panel" style="display: none">
+        <img id="imgLoadingRight" src="images/loading.gif" />
+        <img id="imageRight" style="display: none" />
+    </div>
+    <div id="overlay_panel" style="overflow: hidden; display: none; position: absolute; top: 110px">
+        <img id="imgLoadingOverlay" src="images/loading.gif" />
+        <img id="image_overlay" style="display: none" />
+    </div>
+    <div class="split-image-2" id="image_split_2" style="display: none">
+        <img id="image2" />
+    </div>
+    <div class="split-image-3" id="image_split_3" style="display: none">
+        <img id="image3" />
+    </div>
+    <div class="split-image-4" id="image_split_4" style="display: none">
+        <img id="image4" />
+    </div>
+    <div id="btnLeftTop" style="display: none" class="left-top-button" onclick="SelectImage(1)">
+        <div id="btnLeftTopContents"></div>
+    </div>
+    <div id="btnRightBottom" style="display: none" class="right-bottom-button" onclick="SelectImage(2)">
+        <div id="btnRightBottomContents"></div>
+    </div>
+    
+    <span id="lblLeftTop" style="display: none" class="left-top-button-label">Left</span>
+    <span id="lblRightBottom" style="display: none" class="right-bottom-button-label">Right</span>
+    
+    <div id="lblSplit1" style="display: none" class="split-label">
+        <div id="lblSplit1Contents"></div>
+    </div>
+    <div id="lblSplit2" style="display: none" class="split-label">
+        <div id="lblSplit2Contents"></div>
+    </div>
+    
+    <div id="btnCurrent" class="current-button">
+        <div id="btnCurrentContents"></div>
+    </div>
+    <div id="vCalendar" class="vcalendar" style="display: none">
+        <a class="close" href="javascript:CloseVCalendar()">&times;</a>
+        <div class="vcalendar-header">
+            <a style="float: left" id="lnkPrevVMonth" href="javascript:PrevVMonth(1)">&lt;</a>
+            <a style="float: right" id="lnkNextVMonth" href="javascript:NextVMonth(1)">&gt;</a>
+            <span id="lblVMonth"></span>
+        </div>        
+        <div id="vCalDetails">
+        </div>
+    </div>
+    <div id="pnlPassword" class="password-panel" style="display: none">
+        <a class="close" href="javascript:ClosePassword()">&times;</a>
+        <div class="email-header">
+            <span>Change Password</span>
+        </div>        
+        <div style="padding-top: 15px">
+            <iframe id="frmPassword" frameborder="0" style="height: 245px;width: 100%"></iframe>
+        </div>
+    </div>
+    <div id="pnlEmail" class="email-panel" style="display: none">
+        <a class="close" href="javascript:CloseEmail()">&times;</a>
+        <div class="email-header">
+            <span>Email Image</span>
+        </div>        
+        <div class="email-form" id="pnlEmailForm">
+            <p>
+                <label>Recipient's Email Address</label>
+                <input name="txtEmail" type="text" id="txtEmail" class="input" />
+            </p>
+            <p>
+                <label>Subject</label>
+                <input name="txtSubject" type="text" id="txtSubject" class="input" />
+            </p>
+            <p>
+                <label>Message</label>
+                <textarea name="txtMessage" rows="3" cols="20" id="txtMessage" class="input"></textarea>
+            </p>
+            <p>
+                <span id="btnSend" class="btn" onclick="SendEmail(1)" onmouseover="HoverBtn('btnSend','nbtn')" onmouseout="LeaveBtn('btnSend','nbtn')" style="width: 80px">Send</span>
+            </p>
+        </div>
+        <div id="pnlEmailResult" style="display: none; color: #fff">
+            <p>
+                Your email has been sent.
+            </p>
+        </div>
+    </div>
+    <div id="pnlHelp" class="help-panel" style="display: none">
+        <a class="close" href="javascript:CloseHelp()">&times;</a>
+        <div class="email-header">
+            <span>Welcome to the Construction View&trade; Help and Feedback Page</span>
+        </div>        
+        <div style="font-size: 17px; color: #fff; text-align: left; padding: 20px 60px 20px 60px">
+            <p>If you require help or have any queries using any features on this web site, please<br />e-mail us at <a style="color: #FF9933" href="mailto:help@constructionview.com.au?Subject=Construction View Help">help@constructionview.com.au</a></p>
+            <p>We hope you are enjoying using this web site presented by Construction View&trade;.  We value your feedback which can help us improve our service and product.  To submit any feedback please e-mail us at <a style="color: #FF9933" href="javascript:HelpEmail('feedback@constructionview.com.au')">feedback@constructionview.com.au</a></p>
+        </div>
+    </div>
+    <div id="pnlHelpEmail" class="email-panel" style="display: none">
+        <a class="close" href="javascript:CloseHelpEmail()">&times;</a>
+        <div class="email-header">
+            <span>Feedback Form</span>
+        </div>        
+        <div class="email-form" id="pnlHelpEmailForm">
+            <p>
+                <label>Recipient's Email Address</label>
+                <input name="txtHelpRecipient" type="text" readonly="readonly" id="txtHelpRecipient" class="input" />
+            </p>
+            <p>
+                <label>Subject</label>
+                <input name="txtHelpSubject" type="text" id="txtHelpSubject" class="input" />
+            </p>
+            <p>
+                <label>Message</label>
+                <textarea name="txtHelpMessage" rows="3" cols="20" id="txtHelpMessage" class="input"></textarea>
+            </p>
+            <p>
+                <span id="btnHelpSend" class="btn" onclick="SendHelpEmail()" onmouseover="HoverBtn('btnHelpSend','nbtn')" onmouseout="LeaveBtn('btnHelpSend','nbtn')" style="width: 80px">Send</span>
+            </p>
+        </div>
+        <div id="pnlHelpEmailResult" style="display: none; color: #fff">
+            <p>
+                Your email has been sent.
+            </p>
+        </div>
+    </div>
+    <div id="tLapsePane" class="time-lapse" style="display: none">
+        <a class="close" href="javascript:CloseTLapse()">&times;</a>
+        <div class="email-header">
+            <span>Time Lapse</span>
+        </div>        
+        <div id="tLapseFlash"></div>
+    </div>
+    <span id="btnNScreen" onmouseover="btnHover('btnNScreen','n-screen')" onmouseout="btnOut('btnNScreen','n-screen')" class="btn n-screen" style="display: none" onclick="LoadNormal(true)"></span>
+    <span class="nav" id="nav">
+        <span id="btnFirst" onmouseover="btnHover('btnFirst','first')" onmouseout="btnOut('btnFirst','first')" class="btn first" onclick="First()" style="margin-right: 2px"></span>
+        <span id="btnPrev" onmouseover="btnHover('btnPrev','prev')" onmouseout="btnOut('btnPrev','prev')" class="btn prev" onclick="Prev()" style="margin-right: 2px"></span>
+        <span id="btnNext" onmouseover="btnHover('btnNext','next')" onmouseout="btnOut('btnNext','next')" class="btn next" onclick="Next()" style="margin-right: 2px"></span>
+        <span id="btnLast" onmouseover="btnHover('btnLast','last')" onmouseout="btnOut('btnLast','last')" class="btn last" onclick="Last()"></span>
+    </span>
+    <img id="property_enlarged" style="display: none" alt="" onclick="this.style.display = 'none'" />
+    <img id="imgFinal" alt="" onclick="document.getElementById('property_enlarged').style.display=''" />
+    <div class="banner" id="banner"></div>
+    <p id="pnlAddress" style="text-align: left"><b>8 Kingsley Street</b><br />-------------------------<br />Elwood VIC 3184</p>
+    <div class="property" id="pnlProperty"></div>
+    <div id="pnlClient" class="client"><a target="_blank" href="http://www.informdesign.com.au/"><img border="0" src="images/clients/IMG_10.jpg" alt="Inform Design & Construcion" /></a></div>
+    <div id="pnlAds" class="ad" style="display: none">
+        <script type="text/javascript"> 
+            if(fadeimages.length>0) 
+                new fadeshow(fadeimages, 400, 98, 0, 10000, 1, "R");
+        </script>
+    </div>
+    
+    <div class="left-nav" id="left_nav" style="display: none">
+        <div id="status_bar" style="display: none"></div>
+    </div>
+    <div id="calendarHeader" class="calendar-header">
+        <a id="lnkPrevMonth" href="javascript:PrevMonth()" style="float: left">&lt;</a>
+        <a id="lnkNextMonth" href="javascript:NextMonth()" style="float: right">&gt;</a>
+        <span id="lblMonth">July 2014</span>
+    </div>
+    <div id="calendarPanel" class="calendar">
+    </div>
+    
+    <div id="calendarHeader2" class="calendar-header" style="display: none">
+        <a id="lnkPrevMonth2" href="javascript:PrevMonth(2)" style="float: left">&lt;</a>
+        <a id="lnkNextMonth2" href="javascript:NextMonth(2)" style="float: right">&gt;</a>
+        <span id="lblMonth2"></span>
+    </div>
+    <div id="calendarPanel2" class="calendar" style="display: none">
+    </div>
+    
+    <div class="preview" id="preview"></div>
+    <div id="window" class="window"></div>
+    <div class="s-overlay" id="s_overlay"></div>
+    <div id="window_selection" class="window-selection" style="background-image:url('images/0.jpg');background-size:cover">
+        <div id="selection" class="selection"></div>
+    </div>
+    
+    <span id="lblZoom" class="zoom-label">100%</span>
+    <span id="lblZoomLabel" class="label-zoom-label">Zoom</span>
+    
+    <span class="day-panel" id="dayPanel"></span>
+    <span class="day-panel" id="dayPanel2"></span>
+    <div id="drops1"></div>
+    <div id="drops2"></div>
+   
+    <script type="text/javascript" src="scripts/drag.js"></script>
+        
+    <input type="hidden" name="hidProperty_Count" id="hidProperty_Count" value="6" />
+    <input type="hidden" name="hidPropertyId" id="hidPropertyId" value="11" />
+    <input type="hidden" name="hidPropertyId2" id="hidPropertyId2" />
+    <input type="hidden" name="hidFScreen" id="hidFScreen" value="0" />
+    
+    <span id="btnFullScreen" class="left-btn fscreen" onmouseover="btnLHover('btnFullScreen','fscreen')" 
+        onmouseout="btnLOut('btnFullScreen','fscreen')" onclick="FScreen()">Full Screen</span>
+        <span id="btnNormalScreen" class="left-btn nscreen" onmouseover="btnLHover('btnNormalScreen','nscreen')" 
+        onmouseout="btnLOut('btnNormalScreen','nscreen')" onclick="LoadNormal(true)" style="display: none">Normal Screen</span>
+        <span id="btnVCalendar" class="left-btn vbcalendar" onmouseover="btnLHover('btnVCalendar','vbcalendar')" 
+        onmouseout="btnLOut('btnVCalendar','vbcalendar')" onclick="LoadVCalendar_Click()">Visual Calendar</span>
+        <span id="btnMostRecent" class="left-btn mrecent" onmouseover="btnLHover('btnMostRecent','mrecent')" 
+        onmouseout="btnLOut('btnMostRecent','mrecent')" onclick="LoadProperty(1)">Most Recent</span>
+        
+        <span id="btnTimePrev" class="left-btn time-prev" onmouseover="btnLHover('btnTimePrev','time-prev')" 
+        onmouseout="btnLOut('btnTimePrev','time-prev')" onclick="Prev()">&lt;</span>
+        
+        <span id="lblSTime" class="left-btn time-label" data-dropdown="#dropdown-1"></span>
+        
+        <span id="btnTimeNext" class="left-btn time-next" onmouseover="btnLHover('btnTimeNext','time-next')" 
+        onmouseout="btnLOut('btnTimeNext','time-next')" onclick="Next()">&gt;</span>
+        
+        <span id="btnOverlay" class="left-btn boverlay" onmouseover="btnLHover('btnOverlay','boverlay')" 
+        onmouseout="btnLOut('btnOverlay','boverlay')" onclick="LoadOverlay()">Overlay</span>
+        <span id="btnSplit" class="left-btn split" onmouseover="btnLHover('btnSplit','split')" 
+        onmouseout="btnLOut('btnSplit','split')" onclick="LoadSplit()">Split</span>
+        <span id="btnDay" class="left-btn day" onmouseover="btnLHover('btnDay','day')" 
+        onmouseout="btnLOut('btnDay','day')" onclick="LoadDay()">Day</span>
+        <span id="btnWeek" class="left-btn week" onmouseover="btnLHover('btnWeek','week')" 
+        onmouseout="btnLOut('btnWeek','week')" onclick="LoadWeek()">Week</span>
+        <span id="btnMonth" class="left-btn month" onmouseover="btnLHover('btnMonth','month')" 
+        onmouseout="btnLOut('btnMonth','month')" onclick="LoadMonth()">Month</span>
+        <span id="btnDashboard" class="left-btn dboard" 
+        onmouseover="btnLHover('btnDashboard','dboard')" 
+        onmouseout="btnLOut('btnDashboard','dboard')" onclick="LoadDashboard()">Dashboard</span>
+        
+        <!--span id="btnTLapse" class="left-btn tlapse" 
+        onmouseover="btnLHover('btnTLapse','tlapse')" 
+        onmouseout="btnLOut('btnTLapse','tlapse')" onclick="LoadTLapse(document.getElementById('hidPropertyId').value)">Time Lapse</span-->
+        
+        <span id="btnTLapse" class="left-btn tlapse"
+        onmouseover="btnLHover('btnTLapse','tlapse')" 
+        onmouseout="btnLOut('btnTLapse','tlapse')" data-dropdown="#dropdown-aerial">Aerial Photo</span>
+        <div id="dropAerial"></div>
+        <span id="btnSave" class="left-btn save" 
+        onmouseover="btnLHover('btnSave','save')" 
+        onmouseout="btnLOut('btnSave','save')" onclick="Save(1)">Save</span>
+        <span id="btnPrint" class="left-btn print" onclick="Print()"
+        onmouseover="btnLHover('btnPrint','print')" 
+        onmouseout="btnLOut('btnPrint','print')">Print</span>
+        <span id="btnEmail" class="left-btn email" 
+        onmouseover="btnLHover('btnEmail','email')" onclick="Email(1)"
+        onmouseout="btnLOut('btnEmail','email')">Email</span>
+        
+        
+        <span id="btnHelp" class="left-btn help" 
+        onmouseover="btnLHover('btnHelp','help')" onclick="Help()"
+        onmouseout="btnLOut('btnHelp','help')">Help</span>
+        
+        <span id="btnPassword" class="left-btn password" style="cursor: default">&nbsp;</span>
+        
+        <span id="btnLogout" class="left-btn logout" 
+        onmouseover="btnLHover('btnLogout','logout')" onclick="window.location='index.html'"
+        onmouseout="btnLOut('btnLogout','logout')">Logout</span>
+        
+        <span style="display: none" id="btnFullScreen2" class="left-btn fscreen" onmouseover="btnLHover('btnFullScreen2','fscreen')" 
+        onmouseout="btnLOut('btnFullScreen2','fscreen')" onclick="FScreen(2)">Full Screen</span>
+        <span style="display: none" id="btnNormalScreen2" class="left-btn nscreen" onmouseover="btnLHover('btnNormalScreen2','nscreen')" 
+        onmouseout="btnLOut('btnNormalScreen2','nscreen')" onclick="LoadNormal(true)" style="display: none">Normal Screen</span>
+        <span style="display: none" id="btnVCalendar2" class="left-btn vbcalendar" onmouseover="btnLHover('btnVCalendar2','vbcalendar')" 
+        onmouseout="btnLOut('btnVCalendar2','vbcalendar')" onclick="LoadVCalendar2_Click()">Visual Calendar</span>
+        <span style="display: none" id="btnMostRecent2" class="left-btn mrecent" onmouseover="btnLHover('btnMostRecent2','mrecent')" 
+        onmouseout="btnLOut('btnMostRecent2','mrecent')" onclick="LoadProperty(2)">Most Recent</span>
+        
+        <span style="display: none" id="btnTimePrev2" class="left-btn time-prev" onmouseover="btnLHover('btnTimePrev2','time-prev')" 
+        onmouseout="btnLOut('btnTimePrev2','time-prev')" onclick="Prev(2)">&lt;</span>
+        
+        <span style="display: none" id="lblSTime2" class="left-btn time-label" data-dropdown="#dropdown-2"></span>
+        
+        <span style="display: none" id="btnTimeNext2" class="left-btn time-next" onmouseover="btnLHover('btnTimeNext2','time-next')" 
+        onmouseout="btnLOut('btnTimeNext2','time-next')" onclick="Next(2)">&gt;</span>
+        
+        <span style="display: none" id="btnOverlay2" class="left-btn boverlay" onmouseover="btnLHover('btnOverlay2','boverlay')" 
+        onmouseout="btnLOut('btnOverlay2','boverlay')" onclick="LoadOverlay(2)">Overlay</span>
+        <span style="display: none" id="btnSplit2" class="left-btn split" onmouseover="btnLHover('btnSplit2','split')" 
+        onmouseout="btnLOut('btnSplit2','split')" onclick="LoadSplit(2)">Split</span>
+        <span style="display: none" id="btnDay2" class="left-btn day" onmouseover="btnLHover('btnDay2','day')" 
+        onmouseout="btnLOut('btnDay2','day')" onclick="LoadDay(2)">Day</span>
+        <span style="display: none" id="btnWeek2" class="left-btn week" onmouseover="btnLHover('btnWeek2','week')" 
+        onmouseout="btnLOut('btnWeek2','week')" onclick="LoadWeek(2)">Week</span>
+        <span style="display: none" id="btnMonth2" class="left-btn month" onmouseover="btnLHover('btnMonth2','month')" 
+        onmouseout="btnLOut('btnMonth2','month')" onclick="LoadMonth(2)">Month</span>
+        <span style="display: none" id="btnDashboard2" class="left-btn dboard" 
+        onmouseover="btnLHover('btnDashboard2','dboard')" 
+        onmouseout="btnLOut('btnDashboard2','dboard')" onclick="LoadDashboard(2)">Dashboard</span>
+        
+        <span style="display: none" id="btnTLapse2" class="left-btn tlapse"
+        onmouseover="btnLHover('btnTLapse2','tlapse')" 
+        onmouseout="btnLOut('btnTLapse2','tlapse')" data-dropdown="#dropdown-aerial2">Aerial Photo</span>
+        <div id="dropAerial2"></div>
+
+
+        <span style="display: none" id="btnSave2" class="left-btn save" 
+        onmouseover="btnLHover('btnSave2','save')" 
+        onmouseout="btnLOut('btnSave2','save')" onclick="Save(2)">Save</span>
+        <span style="display: none" id="btnPrint2" class="left-btn print" onclick="Print2()"
+        onmouseover="btnLHover('btnPrint2','print')" 
+        onmouseout="btnLOut('btnPrint2','print')">Print</span>
+        <span style="display: none" id="btnEmail2" class="left-btn email" 
+        onmouseover="btnLHover('btnEmail2','email')" onclick="Email(2)"
+        onmouseout="btnLOut('btnEmail2','email')">Email</span>
+        
+        
+        <span style="display: none" id="btnHelp2" class="left-btn help" 
+        onmouseover="btnLHover('btnHelp2','help')" onclick="Help(2)"
+        onmouseout="btnLOut('btnHelp2','help')">Help</span>
+        
+        
+        <span id="btnPassword2" class="left-btn password" style="cursor: default">&nbsp;</span>
+        
+        <span style="display: none" id="btnLogout2" class="left-btn logout" 
+        onmouseover="btnLHover('btnLogout2','logout')" onclick="window.location='index.html'"
+        onmouseout="btnLOut('btnLogout2','logout')">Logout</span>
+        
+        </div>
+        <iframe id="frDownload" style="position: absolute; display: none; z-index: 8; width: 1px; height: 1px"></iframe>
+    </form>
+    
+</body>
+
+<!-- Mirrored from dashboard.constructionview.com.au/ by HTTrack Website Copier/3.x [XR&CO'2013], Sun, 27 Jul 2014 12:11:13 GMT -->
+</html>

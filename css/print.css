@@ -1,0 +1,69 @@
+﻿body
+{
+    background: none;
+}
+
+#image
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.main-image
+{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#slider_pane_hoz,
+#slider_pane_vrt,
+#sliderBox,
+#slider,
+#loading_pane,
+#overlay,
+#label1_bg,
+#label2_bg,
+#label3_bg,
+#label4_bg,
+#label1,
+#label2,
+#label3,
+#label4,
+#image_split_2,
+#image_split_3,
+#image_split_4,
+#lblSplit1,
+#lblSplit2,
+#vCalendar,
+#dashboard,
+#tLapsePane,
+#btnNScreen,
+#tbar,
+#nav,
+#banner,
+#left_nav,
+#calendarHeader,
+#calendarPanel,
+#calendarHeader2,
+#calendarPanel2,
+#preview,
+#window,
+#s_overlay,
+#selection,
+#lblZoom,
+#dayPanel,
+.cv-logo,
+.left-btn,
+#pnlAds,
+#imageRight,
+.left-btn,
+.overlay-bg-left,
+.overlay-bg-right,
+.split-bg
+{
+    display: none;
+}

@@ -1,0 +1,1152 @@
+﻿@import "buttons.css";
+
+img
+{
+    behavior: url(iepngfix.html);
+}
+
+body
+{
+    font-family: Tahoma;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    background-color: #D3DCE6;
+    background-repeat: repeat-y;
+    background-image: url(../images/bg.gif);
+    background-position: 0px 0px;
+}
+
+.split-bg
+{
+    background-image: url(../images/bg.gif);
+    background-repeat: repeat;
+    position: absolute;
+}
+
+.cv-logo
+{
+    position: absolute;
+    left: 5px;
+    z-index: 10;
+}
+
+.ydc-logo
+{
+    position: absolute;
+    left: 90px;
+    z-index: 10;
+}
+
+.cv-logo img, .ydc-logo img
+{
+    border: 0px;
+}
+
+.overlay
+{
+    position: absolute;
+    background-color: #000;
+    z-index: 4;
+    top: 0px;
+    left: 0px;
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+}
+
+.loading-pane
+{
+    position: absolute;
+    background-color: #D3DCE6;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-image: url(../images/loading.gif);
+    background-position: center center;
+}
+
+td
+{
+    border: solid 1px #000;
+    text-align: center;
+    width: 30px;
+}
+td.ds
+{
+    background-color: #ccc;
+}
+td.today
+{
+    color: Yellow;
+}
+
+.main-image
+{
+    overflow: hidden;
+    top: 110px;
+    left: 232px;
+    position: absolute;
+    background-color: #D3DCE6;
+}
+
+.main-image-fs
+{
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+.main-image img
+{
+    cursor: move;
+}
+
+.banner
+{
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    background-color: #FF6600;
+    height: 100px;
+    text-align: left;
+}
+
+.client
+{
+    position: absolute;
+    left: 1px;
+    top: 11px;
+    border-left: 0px;
+    width: 230px;
+    height: 98px;
+}
+
+.property
+{
+    position: absolute;
+    left: 232px;
+    top: 11px;
+    width: 309px;
+    height: 96px;
+    border: solid 1px #fff;
+    float: left;
+    background-color: #ff9933;
+}
+
+#imgFinal
+{
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    left: 240px;
+    cursor: pointer;
+}
+
+#pnlAddress
+{
+    z-index: 3;
+    position: absolute;
+    top: 30px;
+    left: 360px;
+    cursor: pointer;
+}
+
+.ad
+{
+    position: absolute;
+    width: 400px;
+    height: 98px;
+    top: 11px;
+    left: 544px;
+}
+
+#property_enlarged
+{
+    position: absolute;
+    z-index: 10;
+    left: 240px;
+    top: 18px;
+    border: solid 1px #fff;
+    cursor: pointer;
+}
+
+.tbar
+{
+    position: absolute;
+    z-index: 2;
+    top: 130px;
+}
+
+.nav
+{
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+}
+
+.calendar-header
+{
+    position: absolute;
+    left: 2px;
+    top: 152px;
+    width: 228px;
+    height: 25px;
+    background: url(../images/cal_header_bg.gif);
+}
+
+.calendar-header a, .vcalendar-header a
+{
+    color: #fff;
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 3px;
+}
+
+.calendar-header span, .vcalendar-header span, .email-header span, .dashboard-header span
+
+{
+    color: #fff;
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 4px;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+.dashboard-header
+{
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dashboard-header a
+{
+    float: right;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 4px;
+}
+
+.calendar
+{
+    width: 226px;
+    border: solid 1px #ccc;
+    position: absolute;
+    left: 2px;
+    top: 179px;
+    height: 160px;
+    background-color: #000614;
+}
+
+.calendar table
+{
+}
+
+.calendar table .header td, .vcalendar table .header td
+{
+    border: 0px;
+    color: #fff;
+    height: auto;
+    background-color: Transparent;
+}
+
+.calendar table .header td
+{
+    height: 10px;
+}
+
+.vcalendar table .header td
+{
+    height: 16px;
+}
+
+.calendar table td.active
+{
+    border: solid 1px #354351;
+    width: 28px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    color: #fff;
+    background-color: #101E2C;
+    background-image: url(../images/cal_cell_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.calendar table td.active-hover,
+.calendar table td.active-selected
+{
+    border: solid 1px #354351;
+    width: 28px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    color: #fff;
+    background-color: #101E2C;
+    background-image: url(../images/cal_cell_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px -20px;
+    cursor: pointer;
+}
+
+.calendar table td
+{
+    border: solid 1px #354351;
+    width: 28px;
+    height: 20px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    color: #3A4856;
+    background-color: #101E2C;
+}
+
+.current-button
+{
+    border: solid 1px #354351;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 14px;
+    color: #fff;
+    background-color: #101E2C;
+    position: absolute;
+    top: 112px;
+    width: 226px; 
+    left: 2px; 
+    height: 36px
+}
+
+.current-button div
+{
+    padding-top: 10px;
+}
+
+.split-label
+{
+    border: solid 1px #354351;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 12px;
+    color: #fff;
+    background-color: #101E2C;
+    position: absolute; 
+    top: 112px;
+    width: 111px; 
+    left: 2px; 
+    height: 23px; 
+    cursor: pointer
+}
+
+.split-label div
+{
+    padding-top: 4px;
+}
+
+.left-top-button-label
+{
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: 116px;
+    left: 4px; 
+}
+
+.left-top-button
+{
+    border: solid 1px #354351;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 12px;
+    color: #3A4856;
+    background-color: #101E2C;
+    position: absolute; 
+    top: 112px;
+    width: 111px; 
+    left: 2px; 
+    height: 36px; 
+    cursor: pointer
+}
+
+.right-bottom-button-label
+{
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: 115px;
+    left: 120px; 
+}
+
+.right-bottom-button
+{
+    border: solid 1px #fff;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 12px;
+    color: #fff;
+    background-color: #101E2C;
+    position: absolute;
+    top: 112px;
+    width: 111px; 
+    left: 117px; 
+    height: 36px; 
+    cursor: pointer
+}
+
+.left-top-button div, .right-bottom-button div
+{
+    padding-top: 18px;
+}
+
+.time-lapse
+{
+    position: absolute; 
+    width: 320px; 
+    height: 299px; 
+    border: solid 1px #fff; 
+    z-index: 5; 
+    background-color: #000614;
+}
+
+.vcalendar
+{
+    position: absolute; 
+    width: 728px; 
+    height: 521px; 
+    border: solid 1px #fff; 
+    z-index: 5; 
+    background-color: #000614;
+}
+
+.email-panel
+{
+    position: absolute; 
+    width: 365px; 
+    height: 310px; 
+    border: solid 1px #fff; 
+    z-index: 5; 
+    background-color: #000614;
+}
+
+.password-panel
+{
+    position: absolute; 
+    width: 230px; 
+    height: 290px; 
+    border: solid 1px #fff; 
+    z-index: 5; 
+    background-color: #000614;
+}
+
+.help-panel
+{
+    position: absolute; 
+    width: 750px; 
+    height: 250px; 
+    border: solid 1px #fff; 
+    z-index: 5; 
+    background-color: #000614;
+}
+
+.dashboard
+{
+    position: absolute; 
+    top: 0px;
+    left: 0px;
+    width: 100%; 
+    z-index: 5; 
+    background-color: #000614;
+}
+
+.vcalendar a.close, .time-lapse a.close, .email-panel a.close,
+.help-panel a.close, .password-panel a.close
+{
+    z-index: 3;
+    padding: 5px 8px 5px 8px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    display: -moz-inline-box;
+    display: inline-block;
+    float: right;
+    border-left: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+}
+
+.dashboard a.close
+{
+    z-index: 3;
+    padding: 2px 8px 3px 8px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    display: -moz-inline-box;
+    display: inline-block;
+    float: right;
+    border: solid 1px #ccc;
+    margin: 2px;
+}
+
+.dashboard td
+{
+    vertical-align: top;
+    text-align: left;
+}
+
+.vcalendar table
+{
+    margin-top: 2px;
+}
+
+.vcalendar td span
+{
+    float: right;
+    display: -moz-inline-box;
+    display: inline-block;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 20px;
+    background-color: #000;
+    color: #3A4856;
+}
+
+.vcalendar table td
+{
+    vertical-align: top;
+    border: solid 1px #354351;
+    width: 100px;
+    height: 75px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    color: #3A4856;
+    background-color: #101E2C;
+}
+
+.vcalendar-header, .dashboard-header, .email-header
+{
+    height: 25px;
+    background: url(../images/cal_header_bg.gif);
+}
+
+.selection
+{
+    cursor: move;
+    width: 219px;
+    height: 164px;
+    /* left: 7px;
+    top: 420px; */
+}
+
+.window
+{
+    position: absolute;
+    border: solid 1px #ccc;
+    z-index: 0;
+    width: 219px;
+    top: 419px;
+    left: 6px;
+    height: 164px;
+}
+
+.window-selection
+{
+    
+    position: absolute;
+    z-index: 3;
+    width: 219px;
+    top: 420px;
+    left: 7px;
+    height: 164px;
+    text-align: left;
+}
+
+.preview
+{
+    position: absolute;
+    z-index: 0;
+    width: 226px;
+    border: solid 1px #ccc;
+    left: 2px;
+    top: 415px;
+    height: 230px;
+    background-color: #000614;
+}
+
+.zoom-label
+{
+    z-index: 3;
+    height: 20px;
+    display: -moz-inline-box;
+    display: inline-block;
+    position: absolute;
+    top: 588px;
+    left: 125px;
+    width: 100px;
+    text-align: right;
+    color: #fff; 
+    font-size: 16px;
+}
+
+.label-zoom-label
+{
+    z-index: 3;
+    height: 20px;
+    position: absolute;
+    top: 590px;
+    left: 6px;
+    text-align: right;
+    color: #fff; 
+    font-size: 12px;    
+}
+
+.s-overlay
+{
+    position: absolute;
+    background-color: #000;
+    z-index: 0;
+    width: 219px;
+    top: 420px;
+    left: 7px;
+    height: 164px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+}
+
+
+.slider-pane-loading
+{
+    position: absolute;
+    width: 220px;
+    height: 60px;
+    top: 608px;
+    left: 7px;
+    z-index: 100;
+    background-color: #D3DCE6;
+}
+
+.slider-box
+{
+    position:absolute;
+    width: 240px; 
+    height: 55px; 
+    background-color: #000;
+    z-index: 2;
+}
+
+.slider-pane
+{
+    position: absolute;
+    width: 220px;
+    height: 25px;
+    top: 608px;
+    left: 7px;
+    z-index: 3;
+}
+
+.slider-pane-hoz
+{
+    z-index: 4;
+    position: absolute;
+    height: 25px;
+    top: 105px;
+    left: 232px;
+}
+
+.slider-pane-hoz .horizontal
+{
+    width: 100%;
+}
+
+.slider-pane-vrt
+{
+    width: 25px;
+    z-index: 4;
+    position: absolute;
+    top: 110px;
+    left: 226px;
+}
+
+
+td.v
+{
+    width: 100px;
+    height: 75px;
+    border: solid 1px #ccc;
+}
+
+.v img
+{
+    width: 100px;
+    height: 75px;
+}
+
+.split-image-1
+{
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    top: 110px;
+    left: 232px;
+    position: absolute;
+}
+
+.split-image-2
+{
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    top: 110px;
+    position: absolute;
+}
+
+.split-image-3
+{
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    left: 232px;
+    position: absolute;
+}
+
+.split-image-4
+{
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.left-btn
+{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    border: solid 1px #354351;
+    color: #fff;
+    background-image: url(../images/cal_cell_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    cursor: pointer;
+    display: -moz-inline-box;
+    display: inline-block;
+    position: absolute;
+}
+
+.left-btn-hover
+{
+    border: solid 1px #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    color: #fff;
+    background-image: url(../images/cal_cell_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px -20px;
+    cursor: pointer;
+    display: -moz-inline-box;
+    display: inline-block;
+    position: absolute;
+}
+
+.vbcalendar, .vbcalendar-hover
+{
+    width: 226px;
+    top: 343px;
+    left: 2px;
+}
+
+.mrecent, .mrecent-hover
+{
+    width: 111px;
+    top: 367px;
+    left: 2px;
+}
+
+.time-label
+{
+    width: 111px;
+    top: 367px;
+    left: 117px;
+}
+
+.time-prev, .time-prev-hover
+{
+    width: 20px;
+    top: 367px;
+    left: 117px;
+    z-index: 3;
+}
+
+.time-next, .time-next-hover
+{
+    width: 20px;
+    top: 367px;
+    left: 208px;
+    z-index: 3;
+}
+
+.day-panel
+{
+    display: none;
+}
+
+.day, .day-hover
+{
+    width: 73px;
+    top: 391px;
+    left: 2px;
+}
+
+.month, .month-hover
+{
+    width: 73px;
+    top: 391px;
+    left: 155px;
+}
+
+.week, .week-hover
+{
+    width: 72px;
+    top: 391px;
+    left: 79px;
+}
+
+.dboard, .dboard-hover
+{
+    width: 111px;
+    top: 649px;
+    left: 2px;
+}
+
+.fscreen, .fscreen-hover, .nscreen, .nscreen-hover
+{
+    width: 111px;
+    top: 649px;
+    left: 117px;
+}
+
+.split, .split-hover
+{
+    width: 72px;
+    top: 673px;
+    left: 2px;
+}
+
+.boverlay, .boverlay-hover
+{
+    width:72px;
+    top: 673px;
+    left: 79px;
+}
+
+.tlapse, .tlapse-hover
+{
+    width: 73px;
+    top: 673px;
+    left: 155px;
+}
+
+.save, .save-hover
+{
+    width: 73px;
+    top: 697px;
+    left: 2px;
+}
+
+.print, .print-hover
+{
+    width: 72px;
+    top: 697px;
+    left: 79px;
+}
+
+.email, .email-hover
+{
+    width: 73px;
+    top: 697px;
+    left: 155px;
+}
+
+.logout, .logout-hover
+{
+    width: 111px;
+    top: 721px;
+    left: 117px;
+}
+
+.password, .password-hover
+{
+    width: 111px;
+    top: 721px;
+    left: 2px;
+    display: none;
+}
+
+.help, .help-hover
+{
+    width: 111px;
+    top: 721px;
+    left: 2px;
+}
+
+
+.bvCalendar
+{
+}
+
+.img-label-bg
+{
+    background-color: #000;
+    height: 25px;
+    position: absolute;
+    z-index: 3;
+    opacity: 0.50;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.50;
+}
+
+
+.img-label
+{
+    display: -moz-inline-box;
+    display: inline-block;
+    padding: 5px;
+    color: #fff;
+    position: absolute;
+    z-index: 4;
+    font-weight: bold;
+}
+
+.login
+{
+    border: solid 1px #354351;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    color: #fff;
+    background-color: #2A3846;
+    background-image: url(../images/cal_cell_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    cursor: pointer;
+    display: -moz-inline-box;
+    display: inline-block;
+    width: 100px;
+}
+
+.dlinks
+{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.dlinks a, .dlinks a:link, .dlinks a:visited
+{
+    padding: 5px 10px 5px 10px;
+    display: block;
+    text-decoration: none;    
+    font-size: 14px;
+    border-bottom: solid 1px #354351;
+    color: #fff;
+    background-image: url(../images/dlink_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.dlinks a:hover, .dlinks a:visited:hover, .dlinks a:active
+{
+    padding: 5px 10px 5px 10px;
+    display: block;
+    text-decoration: none;    
+    font-size: 14px;
+    border-bottom: solid 1px #fff;
+    color: #fff;
+    background-image: url(../images/dlink_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px -27px;
+    cursor: pointer;
+}
+
+.dthumb
+{
+    float: left;
+    border: solid 2px #354351;
+    margin: 0px 5px 5px 5px;
+    cursor: pointer;
+}
+
+.dthumb-hover
+{
+    float: left;
+    border: solid 2px #EE822F;
+    margin: 0px 5px 5px 5px;
+    cursor: pointer;
+}
+
+.dthumb span, .dthumb-hover span
+{
+    display: block;
+    padding: 5px;
+    color: #fff;
+    width: 310px;
+}
+
+.dthumb .date, .dthumb-hover .date
+{
+    float: right;
+    display: inline;
+    padding: 0px;
+    width: auto;
+}
+
+.cssform p
+{
+    color: #fff;
+    display: block;
+    clear: left;
+    margin: 0;
+    padding: 5px 0 8px 0;
+    padding-left: 135px; /*width of left column containing the label elements*/
+    border-top: 0px dashed #C2BCAB;
+    height: 1%;
+}
+
+.cssform label
+{
+    font-family: Verdana;
+    text-align: right;
+    font-weight: normal;
+    float: left;
+    margin-left: -140px; /*width of left column*/
+    width: 130px; /*width of labels. Should be smaller than left column (155px) to create some right margin*/
+}
+
+.cssform textarea
+{
+    width: 250px;
+}
+
+.cssform input[type="text"]
+{
+    /*width of text boxes. IE6 does not understand this attribute*/
+    width: 180px;
+}
+
+* html .threepxfix
+{
+    margin-left: 3px;
+}
+
+.email-form p
+{
+    margin-left: 30px;
+    text-align: left;
+}
+
+.email-form label
+{
+    color: #fff;
+    display: block;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.email-form .input
+{
+    width: 300px;
+}
+
+.nbtn
+{
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    border: solid 1px #354351;
+    color: #fff;
+    background-image: url(../images/cal_cell_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    cursor: pointer;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+.nbtn-hover
+{
+    text-align: center;
+    border: solid 1px #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 10px;
+    color: #fff;
+    background-image: url(../images/cal_cell_bg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px -20px;
+    cursor: pointer;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+
+.overlay-bg-left
+{
+    background-color: #999;
+    position: absolute;
+    z-index: 3;
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+}
+
+.overlay-bg-right
+{
+    background-color: #444;
+    position: absolute;    
+    z-index: 3;
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+}
+
+.sep-line
+{
+    z-index: 4;
+    position: absolute;
+    background-color: #ccc;
+    border-color: #EE822F;
+    
+}
+
+.drag 
+{
+    
+    cursor: move;
+}
+#selection{
+    background:rgba(255,255,255,0.5);
+}

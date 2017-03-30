@@ -1,0 +1,66 @@
+﻿.btn
+{
+    display: -moz-inline-box;
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.n-screen
+{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 3;
+    background-image: url(../images/btnNorm.png);
+}
+
+.n-screen-hover
+{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 3;
+    background-image: url(../images/btnNorm_Hover.png);
+}
+
+.first
+{
+    background-image: url(../images/btnFirst.png);
+}
+
+.first-hover
+{
+    background-image: url(../images/btnFirst_Hover.png);
+}
+
+.prev
+{
+    background-image: url(../images/btnPrev.png);
+}
+
+.prev-hover
+{
+    background-image: url(../images/btnPrev_Hover.png);
+}
+
+.next
+{
+    background-image: url(../images/btnNext.png);
+}
+
+.next-hover
+{
+    background-image: url(../images/btnNext_Hover.png);
+}
+
+.last
+{
+    background-image: url(../images/btnLast.png);
+}
+
+.last-hover
+{
+    background-image: url(../images/btnLast_Hover.png);
+}

@@ -1,0 +1,1 @@
+var fadeimages = new Array();fadeimages[0] = ["/images/ads/eecfe66f-592c-4c8f-9d14-fc7c639b9920.jpg", "/redirect.ashx?id=1", "_new"];var fadeimages2 = new Array();fadeimages2[0] = ["/images/ads/eecfe66f-592c-4c8f-9d14-fc7c639b9920.jpg", "/redirect.ashx?id=1", "_new"];
